@@ -1,3 +1,4 @@
+/*****************************/
 db.person.aggregate([
     {
         $project: {
