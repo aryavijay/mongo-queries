@@ -25,7 +25,12 @@ db.person.aggregate([
                     {$toUpper: {$substrCP: ["$name.last", 0, 1]}},
                     {$substrCP: ["$name.last", 1, {$subtract: [{$strLenCP: "$name.last"}, 1]}]}
                 ]
-            }
+            },
+            geoJsonPoint:{
+                type:"Point",
+                coordinates:[ {$toDouble:"$location.coordinates.longitude"}, {$toDouble :"$location.coordinates.latitude"}]
+            },
+            dateOfBirth : { $convert : {input: "$dob.date", to : "date"}}
         }
     }
 ])

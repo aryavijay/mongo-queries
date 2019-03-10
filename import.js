@@ -1,0 +1,1 @@
+mongoimport -d dbname -c collectionName --jsonArray --dump filename
