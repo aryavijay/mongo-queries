@@ -19,7 +19,7 @@ db.friends.aggregate([
     }
 ])
 
-//Get Max score from array
+//Get Max score from array process 1 using max
 
 db.friends.aggregate([
     {$unwind: "$examScores"},
@@ -38,3 +38,5 @@ db.friends.aggregate([
         }
     }
 ])
+
+//Get Max score from array process 2 using score
